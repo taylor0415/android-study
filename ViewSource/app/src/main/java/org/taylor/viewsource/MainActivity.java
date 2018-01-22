@@ -30,37 +30,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickViewSource(View view){
-
         TextView textView=findViewById(R.id.textView);
         EditText editText=findViewById(R.id.editText);
         String url=editText.getText().toString();
         HttpLoad httpLoad=new HttpLoad(textView);
         httpLoad.execute(url);
-
-
-       /* try {
-            String viewSrouce=getViewSource(url);
-            System.out.println("-------->"+viewSrouce);
-            textView.setText(viewSrouce);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
     }
 
-    String getViewSource(String urlStr) throws Exception{
-        System.out.println("要查看的地址为："+urlStr);
-
-        StringBuffer vSrouce=new StringBuffer();
-        URL url = new URL(urlStr);
-        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(
-                urlConnection.getInputStream(), "UTF-8"));// 得到输入流，即获得了网页的内容
-        String line; // 读取输入流的数据，并显示
-        while ((line = reader.readLine()) != null) {
-            vSrouce.append(line);
-        }
-        reader.close();
-
-        return vSrouce.toString();
-    }
 }
