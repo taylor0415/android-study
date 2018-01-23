@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/url"
-        android:text="http://d01.paixin.com/v1.0.2/thumbs/1039187/60030521/staff_1024.jpg"
+        android:text="http://pics.sc.chinaz.com/files/pic/pic9/201711/zzpic8504.jpg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
