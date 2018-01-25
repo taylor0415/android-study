@@ -78,10 +78,16 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
-                Message msg = Message.obtain();
-                msg.obj = bitmap;
-                handler.sendMessage(msg);
+                final Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+                //Message msg = Message.obtain();
+                //msg.obj = bitmap;
+                //handler.sendMessage(msg);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        imageView.setImageBitmap(bitmap);
+                    }
+                });
             }
         }.start();
     }
