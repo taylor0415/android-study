@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,7 +18,9 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView imageView;
+    SmartImageView imageView;
+
+
 
     EditText editText;
 
@@ -85,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        imageView.setImageBitmap(bitmap);
+                        //imageView.setImageBitmap(bitmap);
+                        imageView.setImageUrl("http://att2.citysbs.com/hangzhou/2017/08/28/18/middle_900x599-182521_v2_11681503915921532_15c7c2de4766136558e119b2ca817bb3.jpg");
                     }
                 });
             }
